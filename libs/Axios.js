@@ -1,8 +1,8 @@
 import axios from 'axios'
 export let baseURL = axios.create({
-    baseURL : 'http://localhost:5000/api',
-    withCredentials : true
-})
+  baseURL: "https://nice-blue-hare-ring.cyclic.app/api",
+  withCredentials: true,
+});
 export let UploadImage = async (url) => {
     let form = new FormData()
     form.append('file',url)
