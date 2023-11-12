@@ -29,6 +29,7 @@ export const LoginRegisterModal = ({
     if (disabled) return;
     onSubmit();
   }, [disabled, onSubmit]);
+  if(!openModal) return;
   return (
     <div
       className={`${
