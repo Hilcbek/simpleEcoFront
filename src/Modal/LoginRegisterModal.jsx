@@ -32,7 +32,7 @@ export const LoginRegisterModal = ({
   return (
     <div
       className={`${
-        open ? "bg-neutral-800/70 z-[999]" : "bg-transparent -z-[999]"
+        open ? "bg-neutral-800/70 z-[999]" : "bg-transparent z-[-999]"
       }  fixed top-0 left-0 flex items-center transform justify-center w-full z-[999] h-full bg-neutral-500/80`}
     >
       <div
