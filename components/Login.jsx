@@ -91,7 +91,7 @@ export const Login = () => {
   return (
     <LoginRegisterModal
       open={login.open}
-      label={loading ? "Logging..." : "Login"}
+      label={loading ? "Logging...." : "Login"}
       onClose={login.onClose}
       title={"Ecommerce-app"}
       SubTitle={"Login"}
