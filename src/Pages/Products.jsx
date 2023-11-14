@@ -7,7 +7,7 @@ export const Products = () => {
   let cartModal = useCartModalHook()
   return (
     <div className={`${cartModal.open ? 'md:w-9/12' :'md:w-full'} flex-col h-full flex items-center justify-start transition duration-300 ease-linear`}>
-      <h1 className="text-6xl font-Agbalumo mb-5 underline fot-bold">
+      <h1 className="xs:text-3xl md:text-6xl font-Agbalumo xs:mb-3 md:mb-5 underline fot-bold">
         Products
       </h1>
       <div

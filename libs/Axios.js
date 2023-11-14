@@ -1,6 +1,6 @@
 import axios from "axios";
 export let baseURL = axios.create({
-  baseURL: "https://lastsdsd.onrender.com/api",
+  baseURL: "http://localhost:5000/api",
   withCredentials: true,
 });
 export let UploadImage = async (url) => {
@@ -14,4 +14,4 @@ export let UploadImage = async (url) => {
   );
   return res.data.secure_url;
 };
-//
+//https://lastsdsd.onrender.com

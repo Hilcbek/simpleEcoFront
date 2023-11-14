@@ -41,17 +41,17 @@ const Nav = () => {
     >
       <ul
         className={
-          "flex xs:text-start md:items-center xs:justify-start md:justify-center xs:flex-col md:flex-row cursor-pointer"
+          "flex items-center justify-start md:flex-row cursor-pointer"
         }
       >
         <Link
           to={"/"}
-          className="font-Agbalumo text-2xl  cursor-pointer hover:shadow-black/40 hover:shadow-md "
+          className="font-Agbalumo xs:text-md md:text-2xl  cursor-pointer hover:shadow-black/40 hover:shadow-md "
         >
           Eccomerce-App
         </Link>
         {username && (
-          <h1 className="p-2 xs:mt-1 md:mt-0 text-xs border-solid flex items-center justify-start border-[1px] border-[#009866] ml-2 text-[#009866] font-Roboto bg-[#e0fff5] rounded-3xl">
+          <h1 className="p-2 xs:mt-1 md:mt-0 xs:text-[9px] w-fit md:text-xs border-solid flex items-center justify-start border-[1px] border-[#009866] ml-2 text-[#009866] font-Roboto bg-[#e0fff5] rounded-3xl">
             Logged as {username} <TiTick className={"ml-1"} />
           </h1>
         )}
@@ -59,13 +59,13 @@ const Nav = () => {
       <>
         {username && login.reload ? (
           <ul className="flex items-center list-none justify-start">
-            <button className="w-8 h-8 relative rounded-full flex items-center justify-center bg-gray-100 mr-2 border-solid border-gray-300 border-[1px]">
+            <button className="xs:w-6 md:w-8 xs:h-6 md:h-8 relative rounded-full flex items-center justify-center bg-gray-100 mr-2 border-solid border-gray-300 border-[1px]">
               <CiShoppingCart />
               <span className="absolute -top-2 font-medium -right-1 w-4 h-4 rounded-full flex items-center justify-center bg-[#009866] text-white text-xs font-Roboto">
                 {quantity}
               </span>
             </button>
-            <div className="w-8 h-8 rounded-full border-solid border-[1px] border-gray-300 bg-gray-50">
+            <div className="xs:w-6 md:w-8 xs:h-6 md:h-8 rounded-full border-solid border-[1px] border-gray-300 bg-gray-50">
               <img
                 className="w-full h-full object-cover rounded-full"
                 src={
