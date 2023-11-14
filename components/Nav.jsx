@@ -67,8 +67,10 @@ const Nav = () => {
             <button
               onClick={handleOpener}
               className={`${
-                quantity ? "border-[#009866] scale-[1.04]" : "border-gray-300 scale-100"
-              } xs:w-6 md:w-8 xs:h-6 md:h-8 relative rounded-full flex items-center transition-all ease-linear duration-300 justify-center bg-gray-100 mr-2 border-solid  border-[1px]`}
+                quantity
+                  ? "border-[#009866] scale-[1.04] border-[2px]"
+                  : "border-gray-300 scale-100 border-[1px]"
+              } xs:w-6 md:w-8 xs:h-6 md:h-8 relative rounded-full flex items-center transition-all ease-linear duration-300 justify-center bg-gray-100 mr-2 border-solid`}
             >
               <CiShoppingCart />
               <span className="absolute -top-2 font-medium -right-1 w-4 h-4 rounded-full flex items-center justify-center bg-[#009866] text-white text-xs font-Roboto">
