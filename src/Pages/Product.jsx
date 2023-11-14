@@ -32,7 +32,7 @@ export const Product = ({ product }) => {
       </p>
       <button
         onClick={addToCart}
-        className="p-1 hover:bg-gray-800 hover:text-white transition duration-300 rounded-3xl border-solid font-Roboto border-gray-500 border-[2px] px-3 font-semibold text-xs my-1"
+        className="xs:p-2 w-10/12 md:p-1 md:hover:bg-gray-800 md:hover:text-white transition duration-300 rounded-3xl border-solid font-Roboto border-gray-500 border-[2px] md:px-3 font-semibold text-xs my-1"
       >
         Add to Cart
       </button>
