@@ -166,8 +166,9 @@ export const CartModal = ({ open, disabled }) => {
               <FaCcAmazonPay className="ml-1" />
             </button>
             <button
+              disabled={loading}
               onClick={resetCart}
-              className="p-3 flex items-center justify-center bg-rose-500 w-full text-white rounded-md mt-2 cursor-pointer font-normal text-sm hover:bg-rose-600 transition duration-300"
+              className={`${loading && 'cursor-not-allowed'} p-3 flex items-center justify-center bg-rose-500 w-full text-white rounded-md mt-2 cursor-pointer font-normal text-sm hover:bg-rose-600 transition duration-300`}
             >
               Reset
               <MdDelete className="ml-1" />
