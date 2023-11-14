@@ -14,7 +14,7 @@ function App() {
     let cartModal = useCartModalHook();
     let { username} = useSelector((state) => state.user)
   return (
-    <div className="font-Nunito font-semibold w-11/12 mx-auto">
+    <div className="font-Nunito font-semibold xs:w-full md:w-11/12 mx-auto">
       <BrowserRouter>
         <Toaster
           position="top-center"
