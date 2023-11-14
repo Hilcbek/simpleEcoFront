@@ -61,7 +61,6 @@ export const CartModal = ({ open, disabled }) => {
       setLoading(false)
     }
   }
-  if (openModal) return;
     return (
       <div
         className={`${
