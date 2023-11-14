@@ -8,6 +8,7 @@ import { TiTick } from 'react-icons/ti'
 import useCartModalHook from "../Hooks/useCartModalHook";
 import { LOGOUT } from "../Toolkit/useSlice";
 import { CiShoppingCart } from 'react-icons/ci'
+import { useMediaQuery } from "react-responsive";
 const Nav = () => {
   let { username, profile,quantity} = useSelector((state) => state.user)
   let [scroll,setScroll] = useState(0)
@@ -31,18 +32,22 @@ const Nav = () => {
 
       return () => window.removeEventListener('scroll',handleScroll)
   },[scroll])
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(max-width: 490px)",
+  });
+  let handleOpener = () => {
+    if(isDesktopOrLaptop) cartModal.onOpen()
+  }
   return (
     <div
       className={`${
-        cartModal.open ? "xs:w-11/12" : "md:w-full"
-      } flex items-center xs:w-full justify-between py-2 ${
+        cartModal.open ? "md:w-9/12" : "md:w-full"
+      } flex items-center xs:px-2 md:px-0 justify-between py-2 ${
         scroll ? "sticky top-0 bg-white shadow-md shadow-black/10" : "relative"
       }`}
     >
       <ul
-        className={
-          "flex items-center justify-start md:flex-row cursor-pointer"
-        }
+        className={"flex items-center justify-start md:flex-row cursor-pointer"}
       >
         <Link
           to={"/"}
@@ -59,7 +64,10 @@ const Nav = () => {
       <>
         {username && login.reload ? (
           <ul className="flex items-center list-none justify-start">
-            <button className="xs:w-6 md:w-8 xs:h-6 md:h-8 relative rounded-full flex items-center justify-center bg-gray-100 mr-2 border-solid border-gray-300 border-[1px]">
+            <button
+              onClick={handleOpener}
+              className="xs:w-6 md:w-8 xs:h-6 md:h-8 relative rounded-full flex items-center justify-center bg-gray-100 mr-2 border-solid border-gray-300 border-[1px]"
+            >
               <CiShoppingCart />
               <span className="absolute -top-2 font-medium -right-1 w-4 h-4 rounded-full flex items-center justify-center bg-[#009866] text-white text-xs font-Roboto">
                 {quantity}

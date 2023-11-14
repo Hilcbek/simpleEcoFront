@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddProdct } from "../../Toolkit/useSlice";
 import { CartModal } from "../Modal/CartModal";
 import useCartModalHook from "../../Hooks/useCartModalHook";
+import { useMediaQuery } from "react-responsive";
 
 export const Product = ({ product }) => {
   let [quantity, setQuantity] = useState(1);
   let dispatcher = useDispatch();
   let cartModal = useCartModalHook();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(max-width: 490px)",
+  });
   let addToCart = () => {
     dispatcher(AddProdct({ ...product, quantity }));
-    cartModal.onOpen()
+    if(!isDesktopOrLaptop){
+      cartModal.onOpen();
+    }
   };
   return (
     <div className="p-1 xs:mb-1 border-solid border-[1px] md:border-transparent xs:border-gray-100 lg:mb-0 flex items-center shadow-md group shadow-black/10 hover:shadow-gray-400 transition duration-300 cursor-pointer rounded-md justify-center flex-col">
