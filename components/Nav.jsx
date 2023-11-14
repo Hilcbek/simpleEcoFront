@@ -34,7 +34,7 @@ const Nav = () => {
   return (
     <div
       className={`${
-        cartModal.open ? "md:w-9/12" : "md:w-full"
+        cartModal.open ? "xs:w-11/12" : "md:w-full"
       } flex items-center xs:w-full justify-between py-2 ${
         scroll ? "sticky top-0 bg-white shadow-md shadow-black/10" : "relative"
       }`}
