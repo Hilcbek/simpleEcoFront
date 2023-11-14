@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 import { Register } from "../components/Register";
 import { Login } from "../components/Login";
 import { Toaster } from "react-hot-toast";
-import { Carts } from "./Pages/Carts";
 import { CartModal } from "./Modal/CartModal";
 import useCartModalHook from "../Hooks/useCartModalHook";
 import { Success } from "./Pages/Success";
@@ -27,7 +26,6 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Carts />} />
           <Route path="/success" element={username && <Success />} />
         </Routes>
       </BrowserRouter>
