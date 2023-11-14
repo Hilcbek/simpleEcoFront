@@ -1,6 +1,6 @@
 import axios from "axios";
 export let baseURL = axios.create({
-  baseURL: "https://nice-blue-hare-ring.cyclic.app/api",
+  baseURL: "https://lastsdsd.onrender.com/api",
   withCredentials: true,
 });
 export let UploadImage = async (url) => {

@@ -53,6 +53,7 @@ export const CartModal = ({ open, disabled }) => {
         );
         if(res.data){
           window.location.href = res.data.url
+          dispatcher(Reset());
         }
     } catch (error) {
       toast.error.log(error.response.data)

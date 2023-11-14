@@ -42,6 +42,11 @@ export const Register = () => {
       });
       if (res.data) {
         toast.success(`Successfully registered`);
+         reset({
+           username: "",
+           email: "",
+           password: "",
+         });
         handleModal();
       }
     } catch (error) {
@@ -51,13 +56,6 @@ export const Register = () => {
     }
   };
 
-  useEffect(() => {
-    reset({
-      username: "",
-      email: "",
-      password: "",
-    });
-  }, [isSubmitSuccessful]);
   const Body = (
     <div className="flex items-center justify-center flex-col w-11/12 mx-auto">
       <label
@@ -71,7 +69,7 @@ export const Register = () => {
           id="image"
         />
         <img
-          className="w-full h-full object-cover rounded-full"
+          className="w-full h-full object-contain rounded-full"
           src={
             String(image).includes("https")
               ? image

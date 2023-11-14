@@ -7,8 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { TiTick } from 'react-icons/ti'
 import useCartModalHook from "../Hooks/useCartModalHook";
 import { LOGOUT } from "../Toolkit/useSlice";
+import { CiShoppingCart } from 'react-icons/ci'
 const Nav = () => {
-  let { username, profile} = useSelector((state) => state.user)
+  let { username, profile,quantity} = useSelector((state) => state.user)
   let [scroll,setScroll] = useState(0)
   let cartModal = useCartModalHook();
   let register = useRegisterHook()
@@ -34,7 +35,9 @@ const Nav = () => {
     <div
       className={`${
         cartModal.open ? "md:w-9/12" : "md:w-full"
-      } flex items-center xs:w-full justify-between py-2 ${scroll ? 'sticky top-0 bg-white shadow-md shadow-black/10' : 'relative'}`}
+      } flex items-center xs:w-full justify-between py-2 ${
+        scroll ? "sticky top-0 bg-white shadow-md shadow-black/10" : "relative"
+      }`}
     >
       <ul
         className={
@@ -47,13 +50,21 @@ const Nav = () => {
         >
           Eccomerce-App
         </Link>
-        {username && <h1 className="p-2 xs:mt-1 md:mt-0 text-xs border-solid flex items-center justify-start border-[1px] border-[#009866] ml-2 text-[#009866] font-Roboto bg-[#e0fff5] rounded-3xl">
-          Logged as {username} <TiTick className={"ml-1"} />
-        </h1>}
+        {username && (
+          <h1 className="p-2 xs:mt-1 md:mt-0 text-xs border-solid flex items-center justify-start border-[1px] border-[#009866] ml-2 text-[#009866] font-Roboto bg-[#e0fff5] rounded-3xl">
+            Logged as {username} <TiTick className={"ml-1"} />
+          </h1>
+        )}
       </ul>
       <>
         {username && login.reload ? (
           <ul className="flex items-center list-none justify-start">
+            <button className="w-8 h-8 relative rounded-full flex items-center justify-center bg-gray-100 mr-2 border-solid border-gray-300 border-[1px]">
+              <CiShoppingCart />
+              <span className="absolute -top-2 font-medium -right-1 w-4 h-4 rounded-full flex items-center justify-center bg-[#009866] text-white text-xs font-Roboto">
+                {quantity}
+              </span>
+            </button>
             <div className="w-8 h-8 rounded-full border-solid border-[1px] border-gray-300 bg-gray-50">
               <img
                 className="w-full h-full object-cover rounded-full"
