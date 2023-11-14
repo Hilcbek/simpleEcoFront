@@ -13,7 +13,7 @@ export const Product = ({ product }) => {
     cartModal.onOpen()
   };
   return (
-    <div className="p-1 xs:mb-2 lg:mb-0 flex items-center shadow-md group shadow-black/10 hover:shadow-gray-400 transition duration-300 cursor-pointer rounded-md justify-center flex-col">
+    <div className="p-1 xs:mb-4 lg:mb-0 flex items-center shadow-md group shadow-black/10 hover:shadow-gray-400 transition duration-300 cursor-pointer rounded-md justify-center flex-col">
       <div className="w-[160px] h-[160px]">
         <img
           className="w-full h-full object-contain"
