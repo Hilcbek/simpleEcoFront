@@ -19,6 +19,9 @@ const Nav = () => {
   let Logout = () => {
     dispatcher(LOGOUT())
     login.onReload()
+    if(cartModal.open){
+      cartModal.onClose()
+    }
   }
   useEffect(() => {
       let handleScroll = () => {
