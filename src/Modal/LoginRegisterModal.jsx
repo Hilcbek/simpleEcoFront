@@ -11,7 +11,7 @@ export const LoginRegisterModal = ({
   onSubmit,
   onClose,
   disabled,
-  loading
+  loading,
 }) => {
   let [openModal, setOpenmodal] = useState(open);
   useEffect(() => {
@@ -33,8 +33,8 @@ export const LoginRegisterModal = ({
   return (
     <div
       className={`${
-        open ? "bg-neutral-800/70 z-[999]" : "bg-transparent z-[-999]"
-      }  fixed top-0 left-0 flex items-center transform justify-center w-full z-[999] h-full bg-neutral-500/80`}
+        open ? "bg-neutral-800/70 z-[999] w-full" : "bg-red-500 z-[-999] w-0"
+      }  fixed top-0 left-0 flex items-center transform justify-center z-[999] h-full bg-neutral-500/80`}
     >
       <div
         className={`
